@@ -54,7 +54,7 @@ axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? 'https://api3.y
 // axios.defaults.headers.common['token'] = 'o1OHXvXAkWOIWeVbvCfEYUYsUE7nSDovLtfcVSBN3+WdZJ5zhb9EzObvdgglQozPyInFF5GsI4do3oaoKVjXXorf'
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
-axios.post('myNewCenter', {})
+// axios.post('myNewCenter', {})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
