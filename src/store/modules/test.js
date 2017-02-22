@@ -1,34 +1,32 @@
-/**
- * Created by superman on 2016/12/14.
- */
+
 import * as types from '../types.js';
 import {fetchData} from '../api';
 
 const state = {
-  data: [],
+  testdata: {}
 };
 
 const actions = {
-  setData(context,data){
+  getData({commit}, data){
     fetchData(data)
-    .then(res => {
-      context.commit([types.SET_DATA], res)
-    });
+    .then(res => commit(types.SET_DATA, res));
   },
 
-  clear(context){
-    context.commit([types.CLEAN_DATA])
+  clear({
+    commit
+  }){
+    commit([types.CLEAN_DATA])
   }
 };
 
 const mutations = {
 
   [types.SET_DATA](state, data){
-    state.data = data;
+    state.testdata = data;
   },
 
   [types.CLEAN_DATA](state){
-    state.data = [];
+    state.testdata = [];
   },
 
 };

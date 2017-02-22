@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <router-link :to="{name: 'index'}">
+      后退
+    </router-link>
   </div>
 </template>
 

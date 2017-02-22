@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import store from './store/store.js'
 import App from './App'
-import router from './router'
+import router from './router/index.js'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import './assets/css/wscss/main.scss'
 
 Vue.use(VueAxios, axios)
 
@@ -50,12 +51,6 @@ else if (localStorage.getItem('ymdToken')) {
   axios.defaults.headers.common['token'] = localStorage.getItem('ymdToken')
 }
 
-axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? 'https://api3.yunmodel.com' : 'http://v3.yunmodel.com'
-// axios.defaults.headers.common['token'] = 'o1OHXvXAkWOIWeVbvCfEYUYsUE7nSDovLtfcVSBN3+WdZJ5zhb9EzObvdgglQozPyInFF5GsI4do3oaoKVjXXorf'
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-
-// axios.post('myNewCenter', {})
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
